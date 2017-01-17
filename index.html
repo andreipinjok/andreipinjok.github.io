@@ -1,0 +1,1171 @@
+<html><head>
+    <title>Pinjok Ski Academy</title>
+    <link rel="stylesheet" href="css/pinjok.css" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet " href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="lightbox/bootstrap-lightbox.css">
+    <link rel="stylesheet" href="lightbox/bootstrap-lightbox.min.css">
+    <script type="text/javascript" src="lightbox/bootstrap-lightbox.js"></script>
+    <script type="text/javascript" src="lightbox/bootstrap-lightbox.min.js"></script>
+    <script src="js/wow.min.js "></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fws/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='map/custom.css' rel='stylesheet' type='text/css'>
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link href="img/logo/favicon.ico" rel="icon" type="image/x-icon" />
+  </head>
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <a href="#" class="scrollToTop"></a>
+    <script>
+      $(document).ready(function () { 
+                            $(".navbar-nav li a").click(function(event)
+                            { $(".navbar-collapse").collapse('hide'); }); 
+                            $(window).scroll(function(){
+                            if ($(this).scrollTop() > 100) {
+                              $('.scrollToTop').fadeIn();
+                            } else {
+                              $('.scrollToTop').fadeOut();
+                            }
+                          });
+                          
+                          //Click event to scroll to top
+                          $('.scrollToTop').click(function(){
+                            $('html, body').animate({scrollTop : 0},800);
+                            return false;
+                          });
+        
+              });
+    </script>
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=443271375714375";
+                        fjs.parentNode.insertBefore(js, fjs);
+                      }(document, 'script', 'facebook-jssdk'));
+            
+                      jQuery(document).ready(function($) {
+                        $(window).bind("load resize", function(){  
+                        setTimeout(function() {
+                        var container_width = $('#container').width();    
+                          $('#container').html('<div class="fb-page" ' + 
+                          'data-href="http://www.facebook.com/IniciativaAutoMat"' +
+                          ' data-width="' + container_width + '" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="http://www.facebook.com/IniciativaAutoMat"><a href="http://www.facebook.com/IniciativaAutoMat">Auto*Mat</a></blockquote></div></div>');
+                          FB.XFBML.parse( );    
+                        }, 100);  
+                      }); 
+                      });
+    </script>
+    <script>
+      new WOW().init();
+    </script>
+    <script>
+      $(document).ready(function() {
+                        var $lightbox = $('#lightbox');
+                        
+                        $('[data-target="#lightbox"]').on('click', function(event) {
+                            var $img = $(this).find('img'), 
+                                src = $img.attr('src'),
+                                alt = $img.attr('alt'),
+                                css = {
+                                    'maxWidth': $(window).width() - 100,
+                                    'maxHeight': $(window).height() - 100
+                                };
+                        
+                            $lightbox.find('.close').addClass('hidden');
+                            $lightbox.find('img').attr('src', src);
+                            $lightbox.find('img').attr('alt', alt);
+                            $lightbox.find('img').css(css);
+                        });
+                        
+                        $lightbox.on('shown.bs.modal', function (e) {
+                            var $img = $lightbox.find('img');
+                                
+                            $lightbox.find('.modal-dialog').css({'width': $img.width()});
+                            $lightbox.find('.close').removeClass('hidden');
+                        });
+
+                       var percent = 0, bar = $('.transition-timer-carousel-progress-bar'), crsl = $('#pinjokcar');
+                        function progressBarCarousel() {
+                          bar.css({width:percent+'%'});
+                         percent = percent +0.5;
+                          if (percent>100) {
+                              percent=0;
+                              crsl.carousel('next');
+                          }      
+                        }
+                        crsl.carousel({
+                            interval: false,
+                            pause: true
+                        }).on('slid.bs.carousel', function () {});var barInterval = setInterval(progressBarCarousel, 30);
+                        crsl.hover(
+                            function(){
+                                clearInterval(barInterval);
+                            },
+                            function(){
+                                barInterval = setInterval(progressBarCarousel, 30);
+                            })
+                    });
+    </script>
+
+    <div class="navbar navbar-default navbar-fixed-top navbar-inverse" id="navigator">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-left">&nbsp;<img src="img/logo/pinjokheader.png">
+          <span><font color="#ffffff" size="2">
+                <i class="fa fa-fw fa-phone"></i>&nbsp;0727.074.539&nbsp;
+                <i class="fa fa-envelope-o fa-fw"></i>&nbsp;pinjok@yahoo.com</font></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+              <a  class="page-scroll" href="#descriere">Home</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#features">Pregatire</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#intrebari">FAQ</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#trainer">Program</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#testimonial">Testimoniale</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#prieteni">Prieteni</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#drumetii">Drumetii</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="pinjokcar" data-interval="false" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+        <li class="active" data-target="#pinjokcar" data-slide-to="0"></li>
+        <li data-target="#pinjokcar" data-slide-to="1"></li>
+        <li data-target="#pinjokcar" data-slide-to="2"></li>
+    </ol>  
+      <div class="carousel-inner">
+        <div class="item">
+          <img src="img/header/1A.png">
+        </div>
+        <div class="item active">
+          <img src="img/header/2A.png">
+        </div>
+        <div class="item">
+          <img src="img/header/3A.png">
+        </div>
+      </div>
+       <hr class="transition-timer-carousel-progress-bar" />
+      <a class="left carousel-control" href="#fullcarousel-example" data-slide="prev"><i class="icon-prev fa fa-angle-left"></i></a>
+      <a class="right carousel-control" href="#fullcarousel-example" data-slide="next"><i class="icon-next fa fa-angle-right"></i></a>
+    </div>
+    <section id="cta " class="wow fadeIn ">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-sm-3 ">
+          <br/>
+           <div class="card">
+                <div class="header">
+                <h5><p>Areal Ski Azuga</p></h5>
+                   <h3> <span class="fa-stack fa-3x">
+                        <i class="fa fa-circle fa-stack-2x icon-background4"></i>
+                        <i class="fa fa-circle-thin fa-stack-2x icon-background6"></i>
+                        <font color=" #448AFF"><i class="fa fa-thumbs-o-up fa-stack-1x"></i></font>
+                    </span></h3> <h3>Sezon de Schi</h3>
+                </div>
+                <div class="ctn">
+                   <p><h4><i class="fa fa-flag-checkered" aria-hidden="true"></i> 2016-2017</h4></p>
+               </div>
+          </div>
+          </div>
+
+          <div class="col-sm-9 wow fadeIn"><div class="panel panel-default">
+          <div class="panel-heading-custom panel-heading text-left">
+          <div class="panel-title"><font color="#212121"> <script type="text/javascript">
+                  var today = new Date();
+                  var dd = today.getDate();
+                  var mm = today.getMonth()+1; //January is 0!
+
+                  var yyyy = today.getFullYear();
+                  if(dd<10){
+                      dd='0'+dd;
+                  } 
+                  if(mm<10){
+                      mm='0'+mm;
+                  } 
+                  var today = dd+'.'+mm+'.'+yyyy;
+                  document.write(today);
+            </script></font></div>
+          </div>
+           <div class="panel-body"><br/ ><br/ > <iframe id="forecast_embed " type="text/html" frameborder="0 " height="245 " width="100% " src="https://forecast.io/embed/#lat=45.444060&amp;lon=25.591631&amp;name=Azuga - Prahova&amp;units=ca "></iframe></div>
+           </div>
+          </div>
+        </div>
+        <hr>  
+      </div> 
+    </section>
+    <font style="align-content: center; ">
+      <section id="descriere">
+        <div class="container ">
+          <div class="row ">
+            <div class="col-md-6 wow fadeInRight ">
+              <h1>
+                   <font color="#212121 ">PINJOK</font>
+              </h1>
+              <hr>
+              <h3>
+                <font color="#D32F2F ">ski Academy</font>
+              </h3>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+                dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+                nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+                enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
+                felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+                elementum semper nisi.</p>
+            </div>
+            <div class="col-md-6 wow fadeInLeft">
+              <img src="img/comments/pinjokacademy.jpg " class="img-responsive img-rounded dropshadow">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="features">
+        <div class="container "><div class="row">
+          <div class="section-header ">
+            <h2 class="fadeInDown section-title text-left wow ">Antrenament si Pregatire</h2>
+            <p class="fadeInDown lead text-left wow ">
+              <font color="#757575 ">se adresează atât schiorilor incepători sau mediu pregătiți dar si celor
+                dornici de adrenalină pe schiuri</font>
+            </p>
+          </div>
+          <div class="row ">
+            <div class="col-sm-6 wow bounceIn ">
+              <img class="img-responsive img-rounded dropshadow" src="img/likeus/oferta.jpg ">
+            </div>
+            <div class="col-sm-6 ">
+              <br>
+              <div class="media service-box wow bounceIn ">
+                <div class="pull-left ">
+                  <i class="fa fa-hand-o-right "></i>
+                </div>
+                <div class="media-body ">
+                  <h4 class="media-heading">Pentru Incepatori</h4>
+                  <p>Pregătirea se poate realiza individual, la cerere, sau în grupuri de maximum
+                    6 persoane.</p>
+                </div>
+              </div>
+              <div class="media service-box wow bounceIn ">
+                <div class="pull-left ">
+                  <i class="fa fa-hand-o-right "></i>
+                </div>
+                <div class="media-body ">
+                  <h4 class="media-heading ">Categoria Ski Mediu</h4>
+                  <p>Antrenamentul se desfăsoară în grupuri de 3 - 6 persoane în arealuri de
+                    schi dedicate acestui nivel de pregatire.</p>
+                </div>
+              </div>
+              <div class="media service-box wow bounceIn ">
+                <div class="pull-left ">
+                  <i class="fa fa-hand-o-right "></i>
+                </div>
+                <div class="media-body ">
+                  <h4 class="media-heading ">Pentru Skiori Avansati</h4>
+                  <p>Training efectuat în zone de dificultate sporită, dublat de un pachet
+                    de exerciții si cunostinte de nivel profesionist.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+      <section id="covermesaj">
+        <div class="cover " height="55% ">
+          <div class="background-image-fixed cover-image " style="background-image : url( 'img/bck/1.jpg') "></div>
+          <div class="container ">
+            <div class="row ">
+              <div class="features ">
+                <div class="col-md-4 col-sm-6 wow fadeInLeft" data-wow-duration="400ms ">
+                  <img class="img-responsive img-rounded dropshadow" src="img/cover/1.jpg ">
+                </div>
+                <!--/.col-md-4-->
+                <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="400ms ">
+                  <img class="img-responsive img-rounded dropshadow" src="img/cover/2.jpg ">
+                </div>
+                <!--/.col-md-4-->
+                <div class="col-md-4 col-sm-6 wow fadeInRight" data-wow-duration="400ms ">
+                  <img class="img-responsive img-rounded dropshadow" src="img/cover/3.jpg ">
+                </div>
+                <!--/.col-md-4-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="intrebari">
+          <div class="container ">
+            <div class="row ">
+              <div class="col-md-4 ">
+                <h3 class="column-title ">Experienta si Abilitati</h3>
+                <h4>Nivel de pregatire - 5 sesiuni</h4>
+                <div class="active progress progress-striped ">
+                  <div class="progress-bar progress-bar-info " role="progressbar" style="width: 65%; " aria-valuenow="65 ">65% Complet</div>
+                </div>
+                <h4>Satisfactia clientului</h4>
+                <div class="active progress progress-striped ">
+                  <div class="progress-bar progress-bar-success" role="progressbar " style="width: 90%; ">90% Complet</div>
+                </div>
+                <h4>Abilitati dobandite - 5 sesiuni</h4>
+                <div class="active progress progress-striped ">
+                  <div class="progress-bar progress-bar-danger" role="progressbar " style="width: 50%; ">50% Complet</div>
+                </div>
+              </div>
+              <div class="col-md-4 ">
+                <br>
+                <a class="thumbnail" data-toggle="modal" data-target="#lightbox"> <img class="img-responsive img-rounded dropshadow"  src="img/cover2/3.jpg"></a>
+              </div>
+              <div class="col-md-4 ">
+                <div class="faq_accordion">
+                  <h3 class="column-title ">Intrebari Frecvente</h3>
+                  <div class="panel-group ropshadow" id="accordion">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><font color="#D32F2F "><i class="fa fa-hand-o-right "></i></font>&nbsp;<font color="#757575 ">Pot rezerva ora?</font></a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                          <p>Da! Puteti face rezervari atat la numarul de telefon cat si pe adresa
+                            de email afisate pe site.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><font color="#D32F2F "><i class="fa fa-hand-o-right "></i></font>&nbsp;<font color="#757575 ">Câte persoane pot participa?</font></a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p>Duteti sa participati doar dvs. la ora de pregatire sau maximum 6 persoane.
+                            Nu conditionam calitatea serviciilor noastre fata de numarul de participanti.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><font color="#D32F2F "><i class="fa fa-hand-o-right "></i></font>&nbsp;<font color="#757575 ">Pot plăti în avans?</font></a>
+                        </h4>
+                      </div>
+                      <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <p>Da. Este o modalitate pe care dvs. o veți stabili împreună cu noi - față
+                            de nivelul de pregătire solicitat si a numărului de ore dorit.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </section>
+        <section id="proceduri">
+        <div class="containerul">
+          <div class="section-header">
+            <br>
+            <h1 class="fadeInDown section-title text-center text-primarywow fadeIn">
+              <font color="ffffff">Cum procedam?</font>
+            </h1>
+            <hr width="50%">
+          </div>
+          <div class="row text-center ">
+            <div class="col-md-2 col-md-4 col-xs-6">
+              <div class="wow fadeInUp " data-wow-duration="400ms" data-wow-delay="0ms ">
+                   <h3> <span class="fa-stack fa-3x">
+                        <i class="fa fa-circle fa-stack-2x icon-background4"></i>
+                        <i class="fa fa-circle-thin fa-stack-2x icon-background6"></i>
+                        <font color="#1976D2"><i class="fa fa-coffee fa-stack-1x"></i></font>
+                    </span></h3>
+                  <h3>
+                   <font color="ffffff">ne cunoastem</font>
+                  </h3>
+              </div>
+            </div>  
+            <div class="col-md-2 col-md-4 col-xs-6">
+              <div class="wow fadeInUp " data-wow-duration="400ms" data-wow-delay="0ms ">
+                    <h3><span class="fa-stack fa-3x">
+                        <i class="fa fa-circle fa-stack-2x icon-background4"></i>
+                        <i class="fa fa-circle-thin fa-stack-2x icon-background6"></i>
+                        <font color="#1976D2"><i class="fa fa-clock-o fa-stack-1x"></i></font>
+                    </span></h3>
+                  <h3>
+                  <font color="ffffff">planificam</font>
+                </h3>
+              </div>
+            </div>  
+            <div class="col-md-2 col-md-4 col-xs-6">
+              <div class="wow fadeInUp " data-wow-duration="400ms" data-wow-delay="0ms ">
+                    <h3><span class="fa-stack fa-3x">
+                        <i class="fa fa-circle fa-stack-2x icon-background4"></i>
+                        <i class="fa fa-circle-thin fa-stack-2x icon-background6"></i>
+                        <font color=" #1976D2"><i class="fa fa-cogs fa-stack-1x"></i></font>
+                    </span></h3>
+                  <h3>
+                  <font color="ffffff">exersam</font>
+                </h3>
+              </div>
+            </div>  
+            <div class="col-md-2 col-md-4 col-xs-6">
+              <div class="wow fadeInUp " data-wow-duration="400ms" data-wow-delay="0ms ">
+                   <h3> <span class="fa-stack fa-3x">
+                        <i class="fa fa-circle fa-stack-2x icon-background4"></i>
+                        <i class="fa fa-circle-thin fa-stack-2x icon-background6"></i>
+                        <font color="#1976D2"><i class="fa fa-image fa-stack-1x"></i></font>
+                    </span></h3>
+                  <h3>
+                  <font color="ffffff">testam</font>
+                </h3>
+              </div>
+            </div>  
+            <div class="col-md-2 col-md-4 col-xs-6">
+              <div class="wow fadeInUp " data-wow-duration="400ms" data-wow-delay="0ms ">
+                   <h3><span class="fa-stack fa-3x">
+                        <i class="fa fa-circle fa-stack-2x icon-background4"></i>
+                        <i class="fa fa-circle-thin fa-stack-2x icon-background6"></i>
+                        <font color="#1976D2"><i class="fa fa-check-circle fa-stack-1x"></i></font>
+                    </span></h3>
+                  <h3>
+                  <font color="ffffff">finalizam</font>
+                </h3>
+              </div>
+            </div>  
+            <div class="col-md-2 col-md-4 col-xs-6">
+              <div class="wow fadeInUp " data-wow-duration="400ms" data-wow-delay="0ms ">
+                    <h3><span class="fa-stack fa-3x">
+                        <i class="fa fa-circle fa-stack-2x icon-background4"></i>
+                        <i class="fa fa-circle-thin fa-stack-2x icon-background6"></i>
+                        <font color=" #1976D2"><i class="fa fa-handshake-o fa-stack-1x"></i></font>
+                    </span></h3>
+                  <h3>
+                  <font color="ffffff">prieteni</font>
+                </h3>
+              </div>
+            </div>  
+          </div>
+          <br/ >
+        </div>
+      </section>
+      <section id="filme">
+        <div class="section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/i__1Z5a9Sak" allowfullscreen=""></iframe>
+                </div>
+                <h4 class="text-info">Sezon 2016 - 2017</h4>
+              </div>
+              <div class="col-md-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/i__1Z5a9Sak" allowfullscreen=""></iframe>
+                </div>
+                <h4 class="text-info">Primii cursanti</h4>
+              </div>
+              <div class="col-md-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/i__1Z5a9Sak" allowfullscreen=""></iframe>
+                </div>
+                <h4 class="text-info">Inceput dificil</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="fb-video" data-href="https://ro-ro.facebook.com/ski.azuga/videos/1806861589568941/" data-width="500" data-show-text="true" data-allowfullscreen="false" data-show-captions="true">
+                  <blockquote cite="https://www.facebook.com/ski.azuga/videos/1806861589568941/" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/ski.azuga/videos/1806861589568941/"></a>
+
+                    <p>05.01.2017 Situatia reala a partiei Sorica</p>Posted by
+                    <a href="https://www.facebook.com/ski.azuga/">Ski Azuga</a>on Thursday, January 5, 2017</blockquote>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="fb-video" data-href="https://www.facebook.com/ski.azuga/videos/1702642553324179/"data-width="500" data-show-text="true" data-allowfullscreen="false" data-show-captions="true">
+                  <blockquote cite="https://www.facebook.com/ski.azuga/videos/1702642553324179/" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/ski.azuga/videos/1702642553324179/"></a>
+                    <p>Schiem pana crăpam!!! Video 3</p>Posted by
+                    <a href="https://www.facebook.com/ski.azuga/">Ski Azuga</a>on Thursday, May 12, 2016</blockquote>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="fb-video" data-href="https://www.facebook.com/ski.azuga/videos/1743626409225793/" data-width="500" data-show-text="true" data-allowfullscreen="false" data-show-captions="true">
+                  <blockquote cite="https://www.facebook.com/ski.azuga/videos/1743626409225793/" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/ski.azuga/videos/1743626409225793/"></a>
+                    <p>Care se baga la un ski?</p>Posted by
+                    <a href="https://www.facebook.com/ski.azuga/">Ski Azuga</a>on Tuesday, August 30, 2016</blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="trainer">
+       <div class="container"> 
+        <div class="row">
+        <div>
+          <hr>
+          <br>
+          <h2 class="section-title text-center wow fadeInDown">Programe Initiere si Antrenament</h2><br/><br/>
+        </div>
+        <div class="col-xs-4 wow fadeInUp">
+          <ul class="price">
+            <li class="header" style="background-color:#448AFF"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;Incepator</li>
+            <li class="grey">Initiere</li>
+            <li>Areal incepatori</li>
+            <li>Antrenament</li>
+            <li>Instructor dedicat</li>
+            <li class="grey">
+              <a href="#contact" class="button">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-4 wow fadeInUp">
+          <ul class="price">
+            <li class="header" style="background-color:#F12E05"><i class="fa fa-medium" aria-hidden="true"></i>&nbsp;Mediu</li>
+            <li class="grey">Antrenament</li>
+            <li>Areal mediu</li>
+            <li>Instructor dedicat/grupa</li>
+            <li>Prezentare tehnici ski</li>
+            <li class="grey">
+              <a href="#contact" class="button"> Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-4 wow fadeInUp">
+          <ul class="price">
+            <li class="header"><i class="fa fa-skyatlas" aria-hidden="true"></i>&nbsp;Avansat</li>
+            <li class="grey">Antrenament</li>
+            <li>Areal tehnic</li>
+            <li>Tehnici expert</li>
+            <li>Instructor dedicat</li>
+            <li class="grey">
+              <a href="#contact" class="button">Contact</a>
+            </li>
+          </ul>
+        </div>
+        </div></div>
+      </section>
+      <section id="instructori">
+        <div class="container">
+          <div class="section-header ">
+            <br>
+            <h2 class="section-title text-center wow fadeInDown ">Echipa Noastra</h2>
+            <p class="text-center wow fadeInDown ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut
+              <br>et dolore magna aliqua. Ut enim ad minim veniam</p>
+          </div>
+          <div class="row ">
+            <div class="col-sm-6 col-md-3 ">
+              <div class="team-member wow fadeInUp " data-wow-duration="400ms " data-wow-delay="0ms ">
+                <div class="team-img ">
+                  <img class="img-responsive img-rounded dropshadow" src="img/avansat/361611630619513.jpg " alt=" ">
+                </div>
+                <div class="team-info ">
+                 <h3><font color="#212121"><i class="fa fa-skyatlas" aria-hidden="true"></i> Nivel Expert</h3></font>
+                  <span>Instructor Ski</span>
+                </div>
+                <p>Backed by some of the biggest names in the industry, Firefox OS is an
+                  open platform that fosters greater</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 ">
+              <div class="team-member wow fadeInUp " data-wow-duration="400ms " data-wow-delay="100ms ">
+                <div class="team-img ">
+                  <img class="img-responsive img-rounded dropshadow"  src="img/avansat/560188934095114.jpg " alt=" ">
+                </div>
+                <div class="team-info ">
+                  <h3><font color="#D32F2F"><i class="fa fa-plus" aria-hidden="true"></i> Nivel Avansat</h3></font>
+                  <span>Instructor Ski</span>
+                </div>
+                <p>Backed by some of the biggest names in the industry, Firefox OS is an
+                  open platform that fosters greater</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 ">
+              <div class="team-member wow fadeInUp " data-wow-duration="400ms " data-wow-delay="200ms ">
+                <div class="team-img ">
+                  <img class="img-responsive img-rounded dropshadow"  src="img/mediu/708796222567717.jpg" alt=" ">
+                </div>
+                <div class="team-info ">
+                  <h3><font color="#4CAF50"><i class="fa fa-medium" aria-hidden="true"></i> Nivel Mediu</h3></font>
+                  <span>Instructor Ski</span>
+                </div>
+                <p>Backed by some of the biggest names in the industry, Firefox OS is an
+                  open platform that fosters greater</p>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 ">
+              <div class="team-member wow fadeInUp " data-wow-duration="400ms " data-wow-delay="300ms ">
+                <div class="team-img ">
+                  <img class="img-responsive img-rounded dropshadow"  src="img/avansat/161266613987350.jpg" alt=" ">
+                </div>
+                <div class="team-info ">
+                  <h3><font color=" #1976D2"><i class="fa fa-user" aria-hidden="true"></i> Incepator</h3></font>
+                  <span>Instructor Ski</span>
+                </div>
+                <p>Backed by some of the biggest names in the industry, Firefox OS is an
+                  open platform that fosters greater</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="movexample">
+        <div class="cover ">
+          <div class="background-image-fixed cover-image " style="background-image : url( 'img/comments/450827848364557.jpg') "></div>
+          <div class="container ">
+            <div class="row ">
+              <div class="col-md-12 text-center ">
+                <br>
+                <br>
+              </div>
+              <div class="section ">
+                <div class="container ">
+                  <div class="row ">
+                    <div class="col-md-4 ">
+                      <img src="img/cover2/714981431949196.jpg " class="img-responsive img-rounded dropshadow" >
+                    </div>
+                    <div class="col-md-4 ">
+                      <img src="img/cover2/724212494359423.jpg " class="img-responsive img-rounded dropshadow" >
+                    </div>
+                    <div class="col-md-4 ">
+                      <img src="img/cover2/3.jpg " class="img-responsive img-rounded dropshadow" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="section ">
+                <div class="container ">
+                  <div class="row ">
+                    <div class="col-md-4 ">
+                      <img src="img/cover2/4.jpg " class="img-responsive img-rounded dropshadow" >
+                    </div>
+                    <div class="col-md-4 ">
+                      <img src="img/cover2/5.jpg " class="img-responsive img-rounded dropshadow" >
+                    </div>
+                    <div class="col-md-4 ">
+                      <img src="img/cover2/6.jpg " class="img-responsive img-rounded dropshadow" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <br/>
+      <br/>
+<section id="testimonial">
+<div class="row">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12"><h1 class="section-title text-center">Daruri de la copii</h1>
+              </div>
+          </div>
+          <div class="row justify-content-start">
+			         <div class="col-sm-6 col-md-3">
+			                   <div >
+						            <a href="#" class="thumbnail dropshadow" data-toggle="modal" data-target="#lightbox"> 
+						            	<img src="img/testimonial/1ta.jpg">
+						       		 </a>
+					          </div>
+			            <div class="testimonials">
+			            	<div class="active item">
+			                  <blockquote><p>Sarbatori fericite!</p></blockquote>
+			                  <div class="carousel-info">
+			                     <img src="img/testimonial/1t.jpg" class="pull-left thumbnail dropshadow">
+			                    <div class="pull-left">
+			                      <span class="testimonials-name">Andreea</span>
+			                      <span class="testimonials-post">Eleva Pinjok Ski Academy</span>
+			                    </div>
+			                  </div>
+			                </div>
+			            </div>
+			        </div>
+			        <div class="ccol-sm-6 col-md-3 ">
+			        		  <div >
+						            <a href="#" class="thumbnail dropshadow" data-toggle="modal" data-target="#lightbox"> 
+						            	<img src="img/testimonial/2ta.jpg">
+						       		 </a>
+					          </div>
+			            <div class="testimonials">
+			            	<div class="active item">
+			                  <blockquote><p>Un mesaj din suflet...</p></blockquote>
+			                  <div class="carousel-info">
+			                    <img src="img/testimonial/2t.jpg" class="pull-left thumbnail dropshadow" data-toggle="modal" data-target="#lightbox">
+			                    <div class="pull-left">
+			                      <span class="testimonials-name">Andrei</span>
+			                      <span class="testimonials-post">Elev Pinjok Ski Academy</span>
+			                    </div>
+			                  </div>
+			                </div>
+			            </div>
+			        </div>
+			 <div class="col-sm-6 col-md-3 ">
+                   <div >
+			            <a href="#" class="thumbnail dropshadow" data-toggle="modal" data-target="#lightbox"> 
+			            	<img src="img/testimonial/7ta.jpg">
+			       		 </a>
+		          </div>
+            <div class="testimonials">
+            	<div class="active item">
+                  <blockquote><p>Uau, asa ceva....</p></blockquote>
+                  <div class="carousel-info">
+                    <img src="img/testimonial/7t.jpg" class="pull-left thumbnail dropshadow" data-toggle="modal" data-target="#lightbox">
+                    <div class="pull-left">
+                      <span class="testimonials-name">Ariana</span>
+                      <span class="testimonials-post">Eleva Pinjok Ski Academy</span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          	  </div>
+          	  <div class="col-sm-6 col-md-3 ">
+			            <div class="testimonials">
+			                   <div >
+						            <a href="#" class="thumbnail dropshadow" data-toggle="modal" data-target="#lightbox"> 
+						            	<img src="img/testimonial/8ta.jpg">
+						       		 </a>
+					          </div>
+			            	<div class="active item">
+			                  <blockquote><p>Nu o sa uit niciodata...</p></blockquote>
+			                  <div class="carousel-info">
+			                    <img src="img/testimonial/8t.jpg" class="pull-left thumbnail dropshadow" data-toggle="modal" data-target="#lightbox">
+			                    <div class="pull-left">
+			                      <span class="testimonials-name">Sarah Chitu</span>
+			                      <span class="testimonials-post">Eleva Pinjok Ski Academy</span>
+			                    </div>
+			                  </div>
+			                </div>
+			            </div>
+			    </div>
+          </div>
+                    <div class="row justify-content-start">
+			         <div class="col-sm-6 col-md-3">
+			                   <div >
+						            <a href="#" class="thumbnail dropshadow" data-toggle="modal" data-target="#lightbox"> 
+						            	<img src="img/testimonial/5ta.jpg">
+						       		 </a>
+					          </div>
+			            <div class="testimonials">
+			            	<div class="active item">
+			                  <blockquote><p>Iti multumesc mult Andrei...</p></blockquote>
+			                  <div class="carousel-info">
+			                     <img src="img/testimonial/5t.jpg" class="pull-left thumbnail dropshadow">
+			                    <div class="pull-left">
+			                      <span class="testimonials-name">Gabi</span>
+			                      <span class="testimonials-post">Eleva Pinjok Ski Academy</span>
+			                    </div>
+			                  </div>
+			                </div>
+			            </div>
+			        </div>
+			        <div class="ccol-sm-6 col-md-3 ">
+			        		  <div >
+						            <a href="#" class="thumbnail dropshadow" data-toggle="modal" data-target="#lightbox"> 
+						            	<img src="img/testimonial/6ta.jpg">
+						       		 </a>
+					          </div>
+			            <div class="testimonials">
+			            	<div class="active item">
+			                  <blockquote><p>Pacat ca s-a terminat repede...</p></blockquote>
+			                  <div class="carousel-info">
+			                    <img src="img/testimonial/6t.jpg" class="pull-left thumbnail dropshadow" data-toggle="modal" data-target="#lightbox">
+			                    <div class="pull-left">
+			                      <span class="testimonials-name">Sarah</span>
+			                      <span class="testimonials-post">Eleva Pinjok Ski Academy</span>
+			                    </div>
+			                  </div>
+			                </div>
+			            </div>
+			        </div>
+			        <div class="col-sm-6 col-md-3 ">
+			                   <div >
+						            <a href="#" class="thumbnail dropshadow" data-toggle="modal" data-target="#lightbox"> 
+						            	<img src="img/testimonial/3ta.jpg">
+						       		 </a>
+					          </div>
+			            <div class="testimonials">
+			            	<div class="active item">
+			                  <blockquote><p>Am a fost suparat....</p></blockquote>
+			                  <div class="carousel-info">
+			                    <img src="img/testimonial/3t.jpg" class="pull-left thumbnail dropshadow" data-toggle="modal" data-target="#lightbox">
+			                    <div class="pull-left">
+			                      <span class="testimonials-name">Luca</span>
+			                      <span class="testimonials-post">Elev Pinjok Ski Academy</span>
+			                    </div>
+			                  </div>
+			                </div>
+			            </div>
+          	  </div>
+          	  <div class="col-sm-6 col-md-3 ">
+			            <div class="testimonials">
+			                   <div >
+						            <a href="#" class="thumbnail dropshadow" data-toggle="modal" data-target="#lightbox"> 
+						            	<img src="img/testimonial/4ta.jpg">
+						       		 </a>
+					          </div>
+			            	<div class="active item ">
+			                  <blockquote><p>Cineva s-a distrat de minune...</p></blockquote>
+			                  <div class="carousel-info">
+			                    <img src="img/testimonial/4t.jpg" class="pull-left thumbnail dropshadow" data-toggle="modal" data-target="#lightbox">
+			                    <div class="pull-left">
+			                      <span class="testimonials-name">Alina</span>
+			                      <span class="testimonials-post">Eleva Pinjok Ski Academy</span>
+			                    </div>
+			                  </div>
+			                </div>
+			            </div>
+			    </div>
+          </div>
+       </div>
+        <div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true">×</button>
+            <div class="modal-content">
+              <div class="modal-body">
+                <img src="" alt="">
+              </div>
+            </div>
+          </div>
+        </div> 
+        </div>
+      </section>
+      <hr>
+      <section id="comunicate">
+        <div class="section ">
+          <div class="container">
+            <div class="row ">
+              <div class="col-md-6 wow fadeInLeft">
+                <img src="img/despre/526805600766781.jpg " class="img-responsive img-rounded dropshadow">
+                <h3>Competitivitate</h3>
+                <p></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+                  <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+                  <br>Ut enim ad minim veniam, quis nostrud</p>
+                <p></p>
+              </div>
+              <div class="col-md-6 wow fadeInRight">
+                <img src="img/despre/503281793119162.jpg " class="img-responsive img-rounded dropshadow">
+                <h3>Traditie</h3>
+                <p></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+                  <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+                  <br>Ut enim ad minim veniam, quis nostrud</p>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="prieteni">
+        <div class="container-fluid">
+          <h1 class="text-center wow fadeIn" contenteditable="true">Prietenii Pinjok ski Academy</h1><hr>
+          <div class="col-xs-6 col-sm-3 wow fadeIn">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/peisajeski/5.jpg">
+        </a>
+          </div>
+          <div class="col-xs-6 col-sm-3 wow fadeIn">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/peisajeski/6.jpg">
+        </a>
+          </div>
+          <div class="col-xs-6 col-sm-3 wow fadeIn">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/peisajeski/7.jpg">
+        </a>
+          </div>
+          <div class="col-xs-6 col-sm-3 wow fadeIn">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/peisajeski/8.jpg">
+        </a>
+          </div>
+        </div>
+        <div class="container">
+          <div class="col-xs-6 col-sm-3 wow fadeIn">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/peisajeski/1.jpg">
+        </a>
+          </div>
+          <div class="col-xs-6 col-sm-3 wow fadeIn">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/peisajeski/2.jpg">
+        </a>
+          </div>
+          <div class="col-xs-6 col-sm-3 wow fadeIn">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/peisajeski/3.jpg">
+        </a>
+          </div>
+          <div class="col-xs-6 col-sm-3 wow fadeIn">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/peisajeski/4.jpg">
+        </a>
+          </div>
+        </div>
+        <div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true">×</button>
+            <div class="modal-content">
+              <div class="modal-body">
+                <img src="" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="drumetii">
+        <div class="container-fluid">
+          <h1 class="text-center wow fadeIn" contenteditable="true">&nbsp;Drumetii Montane&nbsp;</h1><hr>
+          <div class="col-xs-6 col-sm-3">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/ture munte/639513096162697.jpg">
+        </a>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/ture munte/642728929174447.jpg">
+        </a>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/ture munte/642894459157894.jpg">
+        </a>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/ture munte/665926800187993.jpg">
+        </a>
+          </div>
+        </div>
+        <div class="container">
+          <div class="col-xs-6 col-sm-3">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/ture munte/799571116823560.jpg">
+        </a>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/ture munte/799571426823529.jpg">
+        </a>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/ture munte/799813323466006.jpg">
+        </a>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox"> 
+            <img class="img-responsive img-rounded dropshadow" src="img/ture munte/803260353121303.jpg">
+        </a>
+          </div>
+        </div>
+        <div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true">×</button>
+            <div class="modal-content">
+              <div class="modal-body">
+                <img src="" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="noutati">
+        <div class="section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <img src="img/mediu/708796222567717.jpg" class="img-responsive img-rounded dropshadow">
+                <h3>&nbsp;Noutati 2017</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+                  <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+                  <br>Ut enim ad minim veniam, quis nostrud</p>
+              </div>
+              <div class="col-md-4">
+                <img src="img/utile/1.jpg" class="img-responsive img-rounded dropshadow">
+                <h3>&nbsp;Transport</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+                  <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+                  <br>Ut enim ad minim veniam, quis nostrud</p>
+              </div>
+              <div class="col-md-4">
+                <img src="img/avansat/714129405367732.jpg" class="img-responsive img-rounded dropshadow">
+                <h3>&nbsp;Oferte</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+                  <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+                  <br>Ut enim ad minim veniam, quis nostrud</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr>
+      <section id="contact">
+       <div class="cover " height="15% ">
+          <div class="background-image-fixed cover-image " style="background-image : url( 'img/cover2/contactform.jpg') "></div>
+      <div class="container">
+      <div class="col-sm-4"><h3 class="section-title text-center">
+                    <span class="fa-stack fa-3x">
+                        <i class="fa fa-circle fa-stack-2x icon-background4"></i>
+                        <i class="fa fa-circle-thin fa-stack-2x icon-background6"></i>
+                        <font color="#1976D2"><i class="fa fa-envelope-o fa-stack-1x"></i></font>
+                    </span></h3>
+      </div>
+        <div class="col-sm-8 col-md-3"> <h2><font color=" #FFFFFF"><br /><br />Trimite un mesaj</h2><hr></div>
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <form id="contactform" method="POST" role="form">
+
+                        <div class="messages"></div>
+
+                        <div class="controls">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_name"><font color=" #ffffff">&nbsp;Te rugam sa completezi</label></font>
+                                          <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Numele tau *" required="required" data-error="Acest camp este obligatoriu - Nume.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_email"><font color=" #ffffff">&nbsp;Unde te putem contacta</label></font>
+                                        <input id="form_email" type="email" name="_replyto" class="form-control" placeholder="Adresa email *" required="required" data-error="Este necesara o adresa de email valida.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_message"><font color=" #ffffff">&nbsp;Mesajul tau</label></font>
+                                        <textarea id="form_message" name="message" class="form-control" placeholder="Completat aici *" rows="4" required="required" data-error="Te rugam sa ne lasi un mesaj!"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-primary" value="Trimite">
+                                    <script>
+                                        var contactform =  document.getElementById('contactform');
+                                        contactform.setAttribute('action', '//formspree.io/' + 'pinjok' + '@' + 'yahoo' + '.' + 'com');
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div><!-- /.8 -->
+           </div>
+           </div>
+</div>
+</section>
+<section id="harta">
+
+        <div class="row">
+              <div class="col-md-12"><h3 class="section-title text-center">
+                    <span class="fa-stack fa-3x">
+                        <i class="fa fa-circle fa-stack-2x icon-background4"></i>
+                        <i class="fa fa-circle-thin fa-stack-2x icon-background6"></i>
+                        <font color="#1976D2"><i class="fa fa-map-marker fa-stack-1x"></i></font>
+                    </span></h3>
+              </div>
+          <div class="col-md-12">
+             <h2 class="section-title text-center"><font color="#000000">Locatia Pinjok Ski Academy</h2></font>
+             <hr>
+           </div>
+      </div>
+  <div class="container-fluid"><div id="map"></div></div>
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD84G7AWbt_2lo5wi1gMMkzHyB2H-funuc"></script>
+        <script src="map/custom.js"></script>
+  </section>
+      <footer class="section section-primary">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <h5 contenteditable="true">©&nbsp;Pinjok Ski Academy - 2016.&nbsp;Toate drepturile rezervate.</h5>
+                <h6><p>Marca - "Pinjok Ski Academy" si domeniul pinjokskiacademy.ro 
+                <br>sunt in proprietatea d-lui. Pintenaru Andrei.</p></h6>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-info text-right">
+                <font color="#ffffff">
+                  <i class="fa fa-phone"></i>&nbsp;0727.074.539&nbsp;
+                  <i class="fa fa-envelope-o"></i>&nbsp;pinjok@yahoo.com</font>
+                <br>
+                <i class="fa fa-map-marker"></i>&nbsp;Str. Valea Azugii, nr.1, Azuga, Prahova 105100
+                <br>
+              </p>
+              <div class="row">
+                <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
+                  <a href="#"><i class="fa fa-1x fa-fw fa-twitter text-inverse"></i></a>
+                  <a href="https://www.facebook.com/ski.azuga/"><i class="fa fa-1x fa-fw fa-facebook text-inverse"></i></a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 hidden-xs text-right">
+                  <a href="#"><i class="fa fa-1x fa-fw fa-twitter text-inverse"></i></a>
+                  <a href="https://www.facebook.com/ski.azuga/"><i class="fa fa-1x fa-fw fa-facebook text-inverse"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer> 
+</body>
+</html>
